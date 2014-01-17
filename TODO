@@ -1,0 +1,4 @@
+ * implement callback/dlr url
+ * implement MediaUrl support
+ * logging
+ * better logic for success/fail/retry

@@ -1,0 +1,8 @@
+<?php
+
+$config = array(
+	"accountSid"	=> "",
+	"authToken"	=> "",
+);
+
+?>

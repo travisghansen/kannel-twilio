@@ -1,0 +1,8 @@
+//queued
+{"sid": "", "date_created": "Thu, 16 Jan 2014 23:41:21 +0000", "date_updated": "Thu, 16 Jan 2014 23:41:21 +0000", "date_sent": null, "account_sid": "", "to": "", "from": "", "body": "this is a test", "status": "queued", "num_segments": "1", "num_media": "0", "direction": "outbound-api", "api_version": "2010-04-01", "price": null, "price_unit": "USD", "uri": "/2010-04-01/Accounts//Messages/.json", "subresource_uris": {"media": "/2010-04-01/Accounts//Messages//Media.json"}}
+
+//failure
+{"code": 21603, "message": "A 'From' phone number is required.", "more_info": "https://www.twilio.com/docs/errors/21603", "status": 400}
+
+//failure
+{"code": 21608, "message": "The number XXXXXXXXXX is unverified. Trial accounts cannot send messages to unverified numbers; verify XXXXXXXXXX at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.", "more_info": "https://www.twilio.com/docs/errors/21608", "status": 400}
