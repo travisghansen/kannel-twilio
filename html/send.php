@@ -10,6 +10,15 @@ require_once($config_path);
 $accountSid = $config['accountSid'];
 $authToken = $config['authToken'];;
 
+//generate hash for hacky auth
+$hash = sha1("${accountSid}:${authToken}");
+
+//ensure hash is sane
+if($hash != $_GET['auth_hash']){
+	$response = "failure";
+	goto end;
+}
+
 //per message
 $from = $_GET['from'];
 $to = $_GET['to'];
@@ -53,6 +62,8 @@ if(curl_errno($c)){
 }
 curl_close($c);
 
+
+end:
 header("Content-Type:text/plain");
 echo $response;
 
