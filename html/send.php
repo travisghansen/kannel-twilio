@@ -24,6 +24,10 @@ $from = $_GET['from'];
 $to = $_GET['to'];
 $body = $_GET['text'];
 
+if(empty($from)){
+	$from = $config['defaultFrom'];
+}
+
 //not implemented
 //$media_url = $_GET['udh'];//metadata?
 //$status_callback = $_GET['dlr_url'];//dlr_url
