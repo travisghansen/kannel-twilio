@@ -46,7 +46,6 @@ $params = array(
 $c = curl_init($url);
 curl_setopt($c, CURLOPT_POST, 1);
 curl_setopt($c, CURLOPT_POSTFIELDS, $params);
-curl_setopt($c, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($c, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
 curl_setopt($c, CURLOPT_USERPWD, "${accountSid}:${authToken}");
