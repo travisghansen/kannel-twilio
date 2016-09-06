@@ -1,9 +1,10 @@
 <?php
 
 $config = array(
-	"accountSid"	=> "",
-	"authToken"	=> "",
-	"defaultFrom"	=> "",
+    "defaultAccountSid"	   => "",
+    "defaultAuthToken"     => "",
+    "defaultFrom"          => "",
+    "token"                => "",
 );
 
 ?>

@@ -4,7 +4,6 @@
 
 //kannel config | http://www.kannel.org/download/1.5.0/userguide-1.5.0/userguide.html#AEN3578  table 6-9
 //note: that FROM/TO are reversed in this context
-//note: auth_hash is sha1 hash of "${accountSid}:${authToken}"
-//send-url = "http://<server>/send.php?from=%P&to=%p&text=%b&auth_hash=XXX"
+//send-url = "http://<server>/send.php?from=%P&to=%p&text=%b&token=XXX"
 
 
