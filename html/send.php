@@ -4,10 +4,15 @@
 
 //includes an array $config with account details etc
 $config_path = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'config.php';
-require_once $config_path;
+include_once $config_path;
+
+$token             = (getenv('TOKEN'))               ? getenv('TOKEN')               : $config['token'];
+$defaultAccountSid = (getenv('DEFAULT_ACCOUNT_SID')) ? getenv('DEFAULT_ACCOUNT_SID') : $config['defaultAccountSid'];
+$defaultAuthToken  = (getenv('DEFAULT_AUTH_TOKEN'))  ? getenv('DEFAULT_AUTH_TOKEN')  : $config['defaultAuthToken'];
+$defaultFrom       = (getenv('DEFAULT_FROM'))        ? getenv('DEFAULT_FROM')        : $config['defaultFrom'];
 
 //ensure hash is sane
-if ($config['token'] != $_REQUEST['token']) {
+if (strlen($token) < 1 || $token != $_REQUEST['token']) {
     $response = 'failure';
     goto end;
 }
@@ -20,15 +25,15 @@ $accountSid = $_REQUEST['accountSid'];
 $authToken = $_REQUEST['authToken'];
 
 if (empty($from)) {
-    $from = $config['defaultFrom'];
+    $from = $defaultFrom;
 }
 
 if (empty($accountSid)) {
-    $accountSid = $config['defaultAccountSid'];
+    $accountSid = $defaultAccountSid;
 }
 
 if (empty($authToken)) {
-    $authToken = $config['defaultAuthToken'];
+    $authToken = $defaultAuthToken;
 }
 
 //not implemented
