@@ -4,7 +4,9 @@
 
 //includes an array $config with account details etc
 $config_path = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'config.php';
-include_once $config_path;
+if (file_exists($config_path)) {
+    include_once $config_path;
+}
 
 $token             = (getenv('TOKEN'))               ? getenv('TOKEN')               : $config['token'];
 $defaultAccountSid = (getenv('DEFAULT_ACCOUNT_SID')) ? getenv('DEFAULT_ACCOUNT_SID') : $config['defaultAccountSid'];
