@@ -69,6 +69,15 @@ if (curl_errno($c)) {
     if ($data['status'] == 'queued') {
         $response = 'ok';
     } else {
+        if (in_array($data['status'], ['failed', 'undelivered'])) {
+            switch ($data['error_code']) {
+                // overflow
+                case '30001':
+                    $response = 'retry later';
+                    goto end;
+                    break;
+            }
+        }
         $response = 'failure';
     }
 }
